@@ -1,6 +1,21 @@
 [profile.default]
-src = "src"
-out = "out"
-libs = ["lib"]
+  src = "src"
+  out = "out"
+  libs = ["lib"]
+  solc = "0.8.23"
+  gas_reports = ["*"]
+  optimizer = true
+  optimizer_runs = 10_000
 
+[etherscan]
+  mainnet = { key = "${API_KEY_ETHERSCAN}" }
+  sepolia = { key = "${API_KEY_ETHERSCAN}" }
+  mumbai= {key = "${API_KEY_POLYGONSCAN}" }
+
+
+[rpc_endpoints]
+  mainnet = "http://localhost:8545"
+  localhost = "http://localhost:8545"
+  sepolia = "${SEPOLIA_JSON_RPC}"
+  mumbai = "${MUMBAI_JSON_RPC}"
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
